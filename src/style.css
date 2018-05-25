@@ -1,1 +1,46 @@
-/* Acá va tu código */
+body {
+    color:rgb(247, 104, 247);
+    background-color: #313335;
+    opacity: 0.5;
+    font-family: 'Courgette', cursive;
+}
+h1{
+    box-sizing: border-box;
+    padding-top: 2%;
+    text-align: center;
+}
+#cifrado{
+    
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Crear 2 columnas iguales una al lado de la otra */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; 
+}
+
+/* eliminar floats despues de las columnas */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - hace que las dos columnas queden una arriba 
+de la otra en vez de una al lado de la otra */
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.boton{
+
+}
