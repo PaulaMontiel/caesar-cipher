@@ -16,9 +16,6 @@ h1{
     padding-top: 2%;
     text-align: center;
 }
-#cifrado{
-    
-}
 
 * {
     box-sizing: border-box;
@@ -51,8 +48,7 @@ de la otra en vez de una al lado de la otra */
 
 .boton{
     border-radius: 15px;
-    font-family: Arial, Helvetica, sans-serif;
     -webkit-text-fill-color: black;
-    background-color: gray;
+    background-color: solid whitesmoke, solid;
 
 }
