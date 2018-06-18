@@ -1,34 +1,24 @@
-cipher = {
-  encode: () => {
-    str = document.getElementById("input1").value.toUpperCase(); 
-    cifrado1 = document.getElementById("cifrado1");
-    offset = parseInt(document.getElementById("espacio1").value);
-    var salida = "";
-      var oldASCII; //donde se guarda el codigo ascii de una letra
-      var newASCII;//codigo ascii resultante luego de sumarle shiftedpositions
-      //por cada letra de la entrada
-      for(var c = 0; c < str.length; c++){
-        oldASCII = str[c].charCodeAt();//obtenemos su codigo
-        newASCII = oldASCII + offset;//desplazamos de lugar la letra al sumarle shiftedpositions
-        salida = salida.concat(String.fromCharCode(newASCII));//convertimos el nuevo codigo a string y concatenamos
-      }
-      cifrado1.value = salida;
-      return salida;
-
-  },
-  decode: () => {
-    str = document.getElementById("input2").value.toUpperCase(); 
-    cifrado2 = document.getElementById("cifrado2");
-    offset = document.getElementById("espacio2").value;
-    offset = offset * -1; 
-
-    var output="";
-    clave = parseInt(offset);
-    for (var i=0; i<str.length;i++){
-		output += String.fromCharCode(str.charCodeAt(i)+clave);
+window.cipher = ({
+//función para cifrar
+encode:(str,offset)=>{
+  let output = '';
+  offset = parseInt(offset); // ir guandando cada caracter
+  for (let i = 0; i < str.length; i++) {
+      let character = str.charCodeAt(i); // guardo el codigo ascii de cada i 
+      if (65 <= character && character <= 90) {
+          output+= String.fromCharCode(((character - 65 + offset) % 26) + 65); //
+      } // para identificar las mayúsculas
+      else if (97 <= character && character <= 122) {
+              output += String.fromCharCode(((character - 97 + offset) % 26) + 97);
+            }       // para identificar las minísculas 
+             else {
+              output+= str.charAt(i); // para que nos devuelva un string     
+               }
     }
-	  // All done!
-    cifrado2.value = output;
-    return output;
-  }
+  return output;
+},
+//función para descrifrar
+decode:(str,offset)=>{
+    return cipher.encode(str, (26 - (offset % 26)));
 }
+})
