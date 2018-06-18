@@ -3,29 +3,44 @@
 <head>
   <meta charset="utf-8">
   <title>Caesar Cipher</title>
- <!--dandole estilo a la pagina-->
+ <!--tipografia-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <!--estilo-->
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
 </head>
 <body>
-  <script type = "text/javascript" src="cipher.js"></script>
-  <script type = "text/javascript" src="index.js"></script>
   <!--Titulo de la página-->
-  <h1>Bienvenido al sistema de cifrado Cesar</h1>
+  <header>
+    <div>  
+      <h1>Bienvenido al sistema de cifrado Cesar</h1>
+    </div>
+  </header>
+  <!--Introducción-->
+    <div>
+      <h3>¿Qué es y para qué sirve?</h3>
+
+      <p>En criptografía, el cifrado César, también conocido como cifrado por desplazamiento,
+      código de César o desplazamiento de César, es una de las técnicas de cifrado más simples y más usadas.
+      Es un tipo de cifrado por sustitución en el que una letra en el texto original es reemplazada por otra 
+      letra que se encuentra un número fijo de posiciones más adelante en el alfabeto. Por ejemplo, con un desplazamiento de 3,
+      la A sería sustituida por la D (situada 3 lugares a la derecha de la A), la B sería reemplazada por la E, etc.
+      Este método debe su nombre a Julio César, que lo usaba para comunicarse con sus generales.</p>
+    </div>
+
 <!--Creando recuadros para introducir numero de caracteres para el cifrado-->
   <div class="row" id="root">
     <div class="column">
       <h3>Posiciones de caracteres que desea desplazar: </h3>
-          <input id="espacio1" type="number" placeholder="shift" min="0" />
+          <input id="offset" type="number" placeholder="offset" min="0" />
       <!--Creando recuadros para introducir los textos para cifrar y descifrar-->
       <h3>Ingrese el texto a cifrar: </h3>
-         <textarea name = "textarea" id="input1" rows="10" cols="70%" placeholder="Ingrese su texto aquí"></textarea>
+         <textarea name = "textarea" id="str" rows="10" cols="70%" placeholder="Ingrese su texto aquí"></textarea>
       <br>
-      <button class="boton" value="encode" onclick="cipher.encode()" >Cifrar</button>
+      <button class="boton" id="encode" value="encode" onclick="encode">Cifrar</button>
     </div>
     <div class="column" >
         <h3>Su texto cifrado es el siguiente: </h3>
-        <textarea name="textarea" id= "cifrado1" rows="16" cols="70%" readonly></textarea>
+        <textarea name="textarea" id= "cifrado" rows="16" cols="70%" readonly></textarea>
       </div>
   </div>
 
@@ -36,19 +51,19 @@
   <div class= "row">
     <div class="column">
       <h3>Posiciones de caracteres que desea desplazar: </h3>
-         <input id="espacio2" type="number" placeholder="shift" min="0" /> 
+         <input id="offset2" type="number" placeholder="offset" min="0" /> 
       <h3>Ingrese el texto a descifrar: </h3>
-         <textarea name= "textarea" id="input2" rows="10" cols="70%" placeholder="Ingrese su texto aquí"></textarea>
+         <textarea name= "textarea" id="str2" rows="10" cols="70%" placeholder="Ingrese su texto aquí"></textarea>
       <br>
-      <button class="boton" value="decode" onclick="cipher.decode()">descifrar</button>
+      <button class="boton" id="decode" value="decode" onclick="decode">descifrar</button>
     </div>
     <div class="column" >
       <br>
         <h3>Su texto descifrado es el siguiente: </h3>
-        <textarea name= "textarea"  id="cifrado2" rows="16" cols="70%" readonly></textarea></div>
+        <textarea name= "textarea"  id="descifrado" rows="16" cols="70%" readonly></textarea></div>
       <br>
   </div>
-  <script src="index.js" class="otros"></script>
-   <ion-footer-bar></ion-footer-bar>
+  <script type = "text/javascript" src="cipher.js"></script>
+  <script type = "text/javascript" src="index.js"></script>
 </body>
 </html>

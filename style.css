@@ -1,14 +1,12 @@
 /* Dando color y formato a la estructura del cifrado*/
 body {
-    -webkit-text-fill-color: rgb(109, 246, 234);
-    -webkit-text-stroke-color: black;
-    -webkit-text-stroke-width: 0.00001px;   
-    background-image: url(img.jpg);
+    color: white;  
+    background-image: url(./img/internet-3400789_1920.jpg);
     background-image: center;
     background-repeat: round;
     background-size: cover;
     opacity: 0.5;
-    font-family: 'Courgette', cursive;
+    font-family: 'Roboto', sans-serif;
     font-size: large;
 }
 h1{
@@ -16,7 +14,10 @@ h1{
     padding-top: 2%;
     text-align: center;
 }
-
+p{
+    text-align: center;
+    text-align: justify;
+}
 * {
     box-sizing: border-box;
 }
